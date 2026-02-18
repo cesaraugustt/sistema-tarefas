@@ -9,10 +9,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Inicializa o banco (cria tabelas se necessário)
 initDb();
 
-// Usa nossas rotas com o prefixo /api
 app.use("/api", routes);
 
 app.get("/", (req, res) => {

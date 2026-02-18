@@ -1,0 +1,38 @@
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: sans-serif;
+}
+
+.tarefa-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tarefa-table th,
+.tarefa-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+/* Regra de Destaque para custos altos */
+.highlight-row {
+  background-color: #fff3cd; /* Amarelo suave */
+  font-weight: bold;
+}
+
+.btn-add {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button {
+  margin-right: 5px;
+  cursor: pointer;
+}
