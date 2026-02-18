@@ -19,7 +19,7 @@ export default [
   {
     rules: {
       "no-unused-vars": "warn",
-      "no-console": "off", // Permitir console.log no backend é útil
+      "no-console": "off",
     },
   },
 ];
