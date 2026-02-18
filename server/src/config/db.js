@@ -15,7 +15,7 @@ export const initDb = async () => {
         nome VARCHAR(255) NOT NULL UNIQUE,
         custo NUMERIC(10, 2) NOT NULL CHECK (custo >= 0),
         data_limite DATE NOT NULL,
-        ordem_apresentacao SERIAL -- Usamos serial para gerar números únicos automáticos
+        ordem_apresentacao SERIAL
       );
     `);
     console.log("✅ Banco de dados pronto para uso!");

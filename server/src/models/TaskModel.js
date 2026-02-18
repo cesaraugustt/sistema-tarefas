@@ -26,7 +26,7 @@ const TaskModel = {
       "UPDATE Tarefas SET nome = $1, custo = $2, data_limite = $3 WHERE id = $4 RETURNING *",
       [nome, custo, data_limite, id],
     );
-    return result.rows[0]; // undefined if rowCount === 0
+    return result.rows[0];
   },
 
   findById: async (id) => {
@@ -59,13 +59,7 @@ const TaskModel = {
     ]);
   },
 
-  // Transaction helper could be useful but for now keeping logic close to original
-  // Actually, for reordering, transaction should be handled in controller or here. 
-  // Let's expose a clear SwapOrder method using a client or just keep simple queries?
-  // The original code used BEGIN/COMMIT/ROLLBACK.
-  // It's cleaner to handle transaction in Service/Controller or Model method that does everything.
-  // Let's put the reorder logic inside a function here to keep Controller clean.
-  
+
   reorder: async (id, direcao) => {
       const client = await pool.connect();
       try {

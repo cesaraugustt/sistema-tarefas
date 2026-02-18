@@ -10,7 +10,7 @@ function TaskModal({ isOpen, onClose, onSave, task }) {
 
   useEffect(() => {
     if (task) {
-        // Formata a data para o input type="date" (YYYY-MM-DD)
+
         const dataFormatada = task.data_limite ? new Date(task.data_limite).toISOString().split('T')[0] : "";
         setFormData({
             nome: task.nome,

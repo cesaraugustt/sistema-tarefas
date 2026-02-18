@@ -8,7 +8,7 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentTask, setCurrentTask] = useState(null);
 
-  // Função para carregar tarefas do backend
+
   const carregarTarefas = async () => {
     try {
       const response = await api.get("/tarefas");
@@ -41,10 +41,10 @@ function App() {
   const salvarTarefa = async (dadosTarefa) => {
     try {
       if (currentTask) {
-        // Editando
+
         await api.put(`/tarefas/${currentTask.id}`, dadosTarefa);
       } else {
-        // Criando
+
         await api.post("/tarefas", dadosTarefa);
       }
       fecharModal();
@@ -87,7 +87,7 @@ function App() {
     }
   };
 
-  // Formatador de Moeda (Padrão Brasileiro)
+
   const formatarMoeda = (valor) => {
     return new Intl.NumberFormat("pt-BR", {
       style: "currency",
@@ -120,7 +120,7 @@ function App() {
               <td>{formatarMoeda(tarefa.custo)}</td>
               <td>
                 {new Date(tarefa.data_limite).toLocaleDateString("pt-BR", {
-                    timeZone: 'UTC' // Importante para datas sem hora
+                    timeZone: 'UTC'
                 })}
               </td>
               <td>
