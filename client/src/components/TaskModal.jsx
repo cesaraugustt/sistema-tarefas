@@ -10,19 +10,20 @@ function TaskModal({ isOpen, onClose, onSave, task }) {
 
   useEffect(() => {
     if (task) {
-
-        const dataFormatada = task.data_limite ? new Date(task.data_limite).toISOString().split('T')[0] : "";
-        setFormData({
-            nome: task.nome,
-            custo: task.custo,
-            data_limite: dataFormatada
-        });
+      const dataFormatada = task.data_limite
+        ? new Date(task.data_limite).toISOString().split("T")[0]
+        : "";
+      setFormData({
+        nome: task.nome,
+        custo: task.custo,
+        data_limite: dataFormatada,
+      });
     } else {
-        setFormData({
-            nome: "",
-            custo: "",
-            data_limite: ""
-        });
+      setFormData({
+        nome: "",
+        custo: "",
+        data_limite: "",
+      });
     }
   }, [task, isOpen]);
 

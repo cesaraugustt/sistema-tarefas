@@ -57,16 +57,16 @@ const TaskController = {
     const { direcao } = req.body;
 
     try {
-        const result = await TaskModel.reorder(id, direcao);
-        if (result && result.error) {
-            return res.status(result.status).json({ error: result.error });
-        }
-        res.json({ message: "Ordem atualizada com sucesso" });
+      const result = await TaskModel.reorder(id, direcao);
+      if (result && result.error) {
+        return res.status(result.status).json({ error: result.error });
+      }
+      res.json({ message: "Ordem atualizada com sucesso" });
     } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: "Erro ao reordenar" });
+      console.error(err);
+      res.status(500).json({ error: "Erro ao reordenar" });
     }
-  }
+  },
 };
 
 export default TaskController;

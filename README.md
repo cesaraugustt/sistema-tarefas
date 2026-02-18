@@ -2,8 +2,7 @@
 
 Sistema completo para gerenciamento de tarefas, com funcionalidades de criação, edição, exclusão e reordenação, além de validação de duplicidade e destaque para tarefas de alto custo.
 
-**[🚀 ACESSAR PROJETO ONLINE](https://sistema-tarefas-sage.vercel.app/)**  
-
+**[🚀 ACESSAR PROJETO ONLINE](https://sistema-tarefas-sage.vercel.app/)**
 
 ## ✨ Funcionalidades
 
@@ -21,34 +20,42 @@ Sistema completo para gerenciamento de tarefas, com funcionalidades de criação
 ## 🚀 Como Rodar Localmente
 
 ### Pré-requisitos
+
 - Node.js instalado
 - Docker (opcional, para rodar banco localmente) ou uma URL de banco Postgres externo.
 
 ### 1. Clone o repositório
+
 \`\`\`bash
 git clone https://github.com/cesaraugustt/sistema-tarefas.git
 cd sistema-tarefas
 \`\`\`
 
 ### 2. Configure as Variáveis de Ambiente
+
 Crie um arquivo \`.env\` na pasta \`server\`:
 \`\`\`env
+
 # Exemplo para banco local ou Neon
+
 DATABASE_URL=postgres://user:pass@host:5432/db_name
 PORT=3001
 \`\`\`
 
 ### 3. Instale as Dependências
+
 Na raiz do projeto, execute:
 \`\`\`bash
 npm run install:all
 \`\`\`
-*(Isso instalará dependências da raiz, do server e do client)*
+_(Isso instalará dependências da raiz, do server e do client)_
 
 ### 4. Inicie o Projeto
+
 \`\`\`bash
 npm start
 \`\`\`
+
 - O **Frontend** rodará em \`http://localhost:5173\`
 - O **Backend** rodará em \`http://localhost:3001\`
 
@@ -60,4 +67,5 @@ O projeto está configurado para deploy automático na **Vercel** com banco de d
 2. **Neon:** Crie um banco Postgres e adicione a \`DATABASE_URL\` nas variáveis de ambiente da Vercel.
 
 ---
+
 Desenvolvido por Cesar.

@@ -48,11 +48,11 @@ td button:hover {
 }
 
 .footer-total {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    text-align: right;
-    padding: 10px;
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-align: right;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }

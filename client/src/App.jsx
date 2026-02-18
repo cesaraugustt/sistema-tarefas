@@ -8,7 +8,6 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentTask, setCurrentTask] = useState(null);
 
-
   const carregarTarefas = async () => {
     try {
       const response = await api.get("/tarefas");
@@ -41,10 +40,8 @@ function App() {
   const salvarTarefa = async (dadosTarefa) => {
     try {
       if (currentTask) {
-
         await api.put(`/tarefas/${currentTask.id}`, dadosTarefa);
       } else {
-
         await api.post("/tarefas", dadosTarefa);
       }
       fecharModal();
@@ -87,7 +84,6 @@ function App() {
     }
   };
 
-
   const formatarMoeda = (valor) => {
     return new Intl.NumberFormat("pt-BR", {
       style: "currency",
@@ -120,28 +116,28 @@ function App() {
               <td>{formatarMoeda(tarefa.custo)}</td>
               <td>
                 {new Date(tarefa.data_limite).toLocaleDateString("pt-BR", {
-                    timeZone: 'UTC'
+                  timeZone: "UTC",
                 })}
               </td>
               <td>
                 <button
-                    title="Subir"
-                    onClick={() => reordenarTarefa(tarefa.id, "subir")}
-                    disabled={index === 0}
-                    style={{ opacity: index === 0 ? 0.3 : 1 }}
+                  title="Subir"
+                  onClick={() => reordenarTarefa(tarefa.id, "subir")}
+                  disabled={index === 0}
+                  style={{ opacity: index === 0 ? 0.3 : 1 }}
                 >
-                    ⬆️
+                  ⬆️
                 </button>
                 <button
-                    title="Descer"
-                    onClick={() => reordenarTarefa(tarefa.id, "descer")}
-                    disabled={index === tarefas.length - 1}
-                     style={{ opacity: index === tarefas.length - 1 ? 0.3 : 1 }}
+                  title="Descer"
+                  onClick={() => reordenarTarefa(tarefa.id, "descer")}
+                  disabled={index === tarefas.length - 1}
+                  style={{ opacity: index === tarefas.length - 1 ? 0.3 : 1 }}
                 >
-                    ⬇️
+                  ⬇️
                 </button>
                 <button title="Editar" onClick={() => abrirModalEdicao(tarefa)}>
-                    ✏️
+                  ✏️
                 </button>
                 <button
                   title="Excluir"
@@ -161,9 +157,7 @@ function App() {
 
       <div className="footer-total">
         <strong>Custo Total: </strong>
-        {formatarMoeda(
-          tarefas.reduce((acc, t) => acc + Number(t.custo), 0)
-        )}
+        {formatarMoeda(tarefas.reduce((acc, t) => acc + Number(t.custo), 0))}
       </div>
 
       <TaskModal
