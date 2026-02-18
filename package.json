@@ -1,0 +1,25 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "services:up": "docker compose up -d",
+    "services:down": "docker compose down",
+    "services:logs": "docker compose logs -f",
+    "format": "prettier --write .",
+    "test": "npm test --prefix server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "prettier": "^3.8.1"
+  }
+}
