@@ -17,7 +17,7 @@
   text-align: left;
 }
 
-/* Regra de Destaque para custos altos */
+/* Regra de Destaque para custos altos >= 1000 */
 .highlight-row {
   background-color: #fff3cd; /* Amarelo suave */
   font-weight: bold;
@@ -30,9 +30,29 @@
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 4px;
 }
 
-button {
+/* Actions buttons */
+td button {
   margin-right: 5px;
   cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  padding: 2px;
+}
+
+td button:hover {
+  transform: scale(1.1);
+}
+
+.footer-total {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-align: right;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }

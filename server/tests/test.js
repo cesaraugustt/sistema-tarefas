@@ -1,6 +1,6 @@
 import request from "supertest";
 import app from "../src/app.js";
-import pool, { initDb } from "../src/db.js";
+import pool, { initDb } from "../src/config/db.js";
 
 describe("API de Tarefas - CRUD e Reordenação", () => {
   beforeAll(async () => {
